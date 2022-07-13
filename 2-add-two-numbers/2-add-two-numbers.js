@@ -19,6 +19,17 @@ var addTwoNumbers = function(l1, l2) {
     let sum = 0;
     let carry = 0;
     while ( true ) {
+        if(l1 === null && carry === 0) {
+            currentNode.val = l2.val;
+             currentNode.next = l2.next;
+              break;
+        }
+        
+        if(l2 === null && carry === 0) {
+              currentNode.val = l1.val;
+             currentNode.next = l1.next;
+             break;
+        }
         sum = carry + (l1?.val ? l1.val : 0)  + (l2?.val ? l2.val : 0) ;
         l1 = l1?.next ? l1.next : null;
         l2 = l2?.next ? l2.next : null;
