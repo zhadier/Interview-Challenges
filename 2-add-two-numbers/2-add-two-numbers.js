@@ -26,7 +26,7 @@ var addTwoNumbers = function(l1, l2) {
         }
         
         if(l2 === null && carry === 0) {
-              currentNode.val = l1.val;
+             currentNode.val = l1.val;
              currentNode.next = l1.next;
              break;
         }
