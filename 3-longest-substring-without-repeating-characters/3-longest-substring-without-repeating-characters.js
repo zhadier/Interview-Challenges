@@ -5,15 +5,16 @@
 var lengthOfLongestSubstring = function(s) {
     let longestSize = 0;
     let currentSize = 0;
-    let arr = [];
+    let map = new Map();
     for (let i =0; i< s.length; i++ ) {
-        if(arr.includes(s[i])) {
+        if(map.has(s[i])) {
             i -= currentSize - 1;
-            arr = [s[i]];
+            map = new Map();
+            map.set(s[i], null)
             currentSize = 1;
         }
         else {
-            arr.push(s[i]);
+            map.set(s[i], null)
             currentSize += 1;
             if (longestSize < currentSize) {
                 longestSize = currentSize;
