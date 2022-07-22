@@ -3,7 +3,6 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let filtered = height.filter(height => height!==0);
     let max =0;
     let i =0;
     let j = height.length -1;
