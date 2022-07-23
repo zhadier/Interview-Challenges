@@ -10,7 +10,7 @@ var isValid = function(s) {
         ,['}','{']
     ]);
    for(let i=0; i<s.length; i++) {
-       if(map.has(s[i])) {
+       if(s[i].match(/[\]\}\)]/i)) {
            if(queue.pop() === map.get(s[i])) {
               continue;
               }
@@ -23,3 +23,4 @@ var isValid = function(s) {
     }
     return false;
 };
+
