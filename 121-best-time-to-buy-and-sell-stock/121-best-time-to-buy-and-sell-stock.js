@@ -3,15 +3,16 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-    const stock = prices.reduce((stock, price) => {
-        if(price<stock.least) {
-            stock.least = price;
+    let least = Number.POSITIVE_INFINITY;
+    let prof =0;
+    const stock = prices.forEach((price) => {
+        if(price<least) {
+            least = price;
         }
         
-       else if (price - stock.least > stock.prof) {
-            stock.prof = price - stock.least;
+       else if (price - least > prof) {
+            prof = price - least;
        }
-        return stock;
-    }, {least: Number.POSITIVE_INFINITY, prof: 0});
-    return stock.prof;
+    });
+    return prof;
 };
