@@ -10,11 +10,7 @@ var floodFill = function(image, sr, sc, color) {
         return image;
     }
     let prevColor = image[sr][sc];
-    image[sr][sc] = color;
-    checkAdjacent(image, sr+1, sc, prevColor, color);
-    checkAdjacent(image, sr-1, sc, prevColor, color);
-    checkAdjacent(image, sr, sc-1, prevColor, color);
-    checkAdjacent(image, sr, sc+1, prevColor, color);
+    checkAdjacent(image, sr, sc, prevColor, color);
     return image
 };
 
