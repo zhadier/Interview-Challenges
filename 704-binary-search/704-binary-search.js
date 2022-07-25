@@ -37,10 +37,10 @@ var find = (start, end, nums, target) => {
             return midpoint;
         }
         else if (nums[midpoint] > target) {
-            return find(start, midpoint, nums, target);
+            return find(start, midpoint-1, nums, target);
         }
         else {
             count ++;
-             return find(midpoint, end, nums, target);
+             return find(midpoint+1, end, nums, target);
         }
     }
