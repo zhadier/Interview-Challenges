@@ -11,6 +11,7 @@
  * @return {boolean}
  */
 var isBalanced = function(root) {
+    try {
     let height = 1;
     if(!root || (root?.left === null && root?.right=== null)){
         return height;
@@ -24,9 +25,14 @@ var isBalanced = function(root) {
     }
 
     if((Math.abs(a-b)) > 1 || a === false || b === false ) {
-        return false;
+      throw error;
     }
     height+= Math.max(a, b);
     console.log(height, a, b);
     return height;
+        
+    } catch (err) {
+        return false;
+    }
+   
 };
