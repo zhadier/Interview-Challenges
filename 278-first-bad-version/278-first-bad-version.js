@@ -20,22 +20,22 @@ var solution = function(isBadVersion) {
     return function(n) {
         let max = n;
         let min = 0;
-        let currentCheck = Math.round((max - min + 1) / 2);
+        let currentCheck = Math.round((max - min) / 2);
         while(true) {
         console.log(currentCheck)
         if(isBadVersion(currentCheck)) {
             if(isBadVersion(currentCheck-1) === false) {
                 return currentCheck;
             }
-            max = currentCheck;
+            max = currentCheck - 1;
             currentCheck = Math.round(currentCheck / 2);
         }
             else {
             if(isBadVersion(currentCheck+1) === true) {
                 return currentCheck+1;
             }
-            min = currentCheck
-            currentCheck = currentCheck + Math.round((max - min + 1) / 2);
+            min = currentCheck + 1;
+            currentCheck = currentCheck + Math.round((max - min) / 2);
             }
         }
     };
